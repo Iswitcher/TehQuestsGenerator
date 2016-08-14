@@ -8,9 +8,9 @@ namespace TehQuestsGenerator
     public class QOTUpgradeBuilding
     {
         [XmlElement(ElementName = "buildingTypeId")]
-        public string BuildingTypeId { get; set; }
+        public int BuildingTypeId { get; set; }
         [XmlElement(ElementName = "level")]
-        public string Level { get; set; }
+        public int Level { get; set; }
     }
 
     [XmlRoot(ElementName = "objective")]
@@ -88,7 +88,7 @@ namespace TehQuestsGenerator
         [XmlElement(ElementName = "res")]
         public string Res { get; set; }
         [XmlElement(ElementName = "count")]
-        public string Count { get; set; }
+        public int Count { get; set; }
         [XmlElement(ElementName = "counterType")]
         public string CounterType { get; set; }
     }
@@ -108,9 +108,9 @@ namespace TehQuestsGenerator
     public class QOTHireUnitsData
     {
         [XmlElement(ElementName = "unitTypeId")]
-        public string UnitTypeId { get; set; }
+        public int UnitTypeId { get; set; }
         [XmlElement(ElementName = "count")]
-        public string Count { get; set; }
+        public int Count { get; set; }
         [XmlElement(ElementName = "counterType")]
         public string CounterType { get; set; }
     }
@@ -128,16 +128,16 @@ namespace TehQuestsGenerator
         [XmlElement(ElementName = "crafts")]
         public Crafts Crafts { get; set; }
         [XmlElement(ElementName = "count")]
-        public string Count { get; set; }
+        public int Count { get; set; }
     }
 
     [XmlRoot(ElementName = "QOTResearch")]
     public class QOTResearch
     {
         [XmlElement(ElementName = "knowledgeTypeId")]
-        public string KnowledgeTypeId { get; set; }
+        public int KnowledgeTypeId { get; set; }
         [XmlElement(ElementName = "level")]
-        public string Level { get; set; }
+        public int Level { get; set; }
     }
 
     [XmlRoot(ElementName = "QOTCraftCamp")]
@@ -146,7 +146,7 @@ namespace TehQuestsGenerator
         [XmlElement(ElementName = "crafts")]
         public Crafts Crafts { get; set; }
         [XmlElement(ElementName = "count")]
-        public string Count { get; set; }
+        public int Count { get; set; }
     }
 
     [XmlRoot(ElementName = "locations")]
@@ -162,14 +162,39 @@ namespace TehQuestsGenerator
         [XmlElement(ElementName = "locations")]
         public Locations Locations { get; set; }
         [XmlElement(ElementName = "count")]
-        public string Count { get; set; }
+        public int Count { get; set; }
+    }
+
+    [XmlRoot(ElementName = "QOTKillPVE")]
+    public class QOTKillPVE
+    {
+        [XmlElement(ElementName = "units")]
+        public Units Units { get; set; }
+        [XmlElement(ElementName = "count")]
+        public int Count { get; set; }
+    }
+
+    [XmlRoot(ElementName = "QOTKillPVP")]
+    public class QOTKillPVP
+    {
+        [XmlElement(ElementName = "units")]
+        public Units Units { get; set; }
+        [XmlElement(ElementName = "count")]
+        public int Count { get; set; }
+    }
+
+    [XmlRoot(ElementName = "units")]
+    public class Units
+    {
+        [XmlElement(ElementName = "unit")]
+        public List<int> Unit { get; set; }
     }
 
     [XmlRoot(ElementName = "items")]
     public class Items
     {
         [XmlElement(ElementName = "item")]
-        public string Item { get; set; }
+        public List<string> Item { get; set; }
     }
 
     [XmlRoot(ElementName = "QOTUseItem")]
@@ -178,7 +203,7 @@ namespace TehQuestsGenerator
         [XmlElement(ElementName = "items")]
         public Items Items { get; set; }
         [XmlElement(ElementName = "count")]
-        public string Count { get; set; }
+        public int Count { get; set; }
     }
 
     [XmlRoot(ElementName = "questList")]

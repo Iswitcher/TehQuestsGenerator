@@ -8,15 +8,15 @@ namespace TehQuestsGenerator
     public class Link
     {
         [XmlAttribute(AttributeName = "linkToId")]
-        public string LinkToId { get; set; }
+        public int LinkToId { get; set; }
         [XmlAttribute(AttributeName = "linkType")]
         public string LinkType { get; set; }
         [XmlAttribute(AttributeName = "triggerType")]
         public string TriggerType { get; set; }
         [XmlAttribute(AttributeName = "linkId")]
-        public string LinkId { get; set; }
+        public int LinkId { get; set; }
         [XmlAttribute(AttributeName = "linkFromId")]
-        public string LinkFromId { get; set; }
+        public int LinkFromId { get; set; }
     }
 
     [XmlRoot(ElementName = "linkList")]

@@ -58,6 +58,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupbox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.deleteObjectiveButton = new System.Windows.Forms.Button();
             this.objectiveIndexTextbox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -86,21 +87,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.questIdTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.linksFromListBox = new System.Windows.Forms.ListBox();
-            this.linksToListBox = new System.Windows.Forms.ListBox();
+            this.saveLinksButton = new System.Windows.Forms.Button();
+            this.linksDataGridView = new System.Windows.Forms.DataGridView();
+            this.questListBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupbox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.linksDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // QuestXmlPickerButton
             // 
-            this.QuestXmlPickerButton.Location = new System.Drawing.Point(12, 12);
+            this.QuestXmlPickerButton.Location = new System.Drawing.Point(106, 12);
             this.QuestXmlPickerButton.Name = "QuestXmlPickerButton";
             this.QuestXmlPickerButton.Size = new System.Drawing.Size(104, 23);
             this.QuestXmlPickerButton.TabIndex = 0;
@@ -110,7 +110,7 @@
             // 
             // QuestLinksPickerButton
             // 
-            this.QuestLinksPickerButton.Location = new System.Drawing.Point(12, 41);
+            this.QuestLinksPickerButton.Location = new System.Drawing.Point(106, 41);
             this.QuestLinksPickerButton.Name = "QuestLinksPickerButton";
             this.QuestLinksPickerButton.Size = new System.Drawing.Size(104, 23);
             this.QuestLinksPickerButton.TabIndex = 1;
@@ -121,7 +121,7 @@
             // CurrentQuestFilepath
             // 
             this.CurrentQuestFilepath.AutoSize = true;
-            this.CurrentQuestFilepath.Location = new System.Drawing.Point(131, 17);
+            this.CurrentQuestFilepath.Location = new System.Drawing.Point(225, 17);
             this.CurrentQuestFilepath.Name = "CurrentQuestFilepath";
             this.CurrentQuestFilepath.Size = new System.Drawing.Size(100, 13);
             this.CurrentQuestFilepath.TabIndex = 2;
@@ -130,7 +130,7 @@
             // CurrentLinksFilepath
             // 
             this.CurrentLinksFilepath.AutoSize = true;
-            this.CurrentLinksFilepath.Location = new System.Drawing.Point(131, 46);
+            this.CurrentLinksFilepath.Location = new System.Drawing.Point(225, 46);
             this.CurrentLinksFilepath.Name = "CurrentLinksFilepath";
             this.CurrentLinksFilepath.Size = new System.Drawing.Size(100, 13);
             this.CurrentLinksFilepath.TabIndex = 3;
@@ -168,7 +168,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.questIdTextbox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 71);
+            this.groupBox1.Location = new System.Drawing.Point(106, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(926, 355);
             this.groupBox1.TabIndex = 5;
@@ -240,6 +240,7 @@
             this.questDescriptionIdTextbox.Size = new System.Drawing.Size(150, 20);
             this.questDescriptionIdTextbox.TabIndex = 20;
             this.questDescriptionIdTextbox.TextChanged += new System.EventHandler(this.questDescriptionIdTextbox_TextChanged);
+            this.questDescriptionIdTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.questDescriptionIdTextbox_KeyPress);
             // 
             // questTitleIdTextbox
             // 
@@ -248,6 +249,7 @@
             this.questTitleIdTextbox.Size = new System.Drawing.Size(158, 20);
             this.questTitleIdTextbox.TabIndex = 19;
             this.questTitleIdTextbox.TextChanged += new System.EventHandler(this.questTitleIdTextbox_TextChanged);
+            this.questTitleIdTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.questTitleIdTextbox_KeyPress);
             // 
             // groupBox3
             // 
@@ -287,6 +289,7 @@
             // 
             // rewardTypeCombobox
             // 
+            this.rewardTypeCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rewardTypeCombobox.FormattingEnabled = true;
             this.rewardTypeCombobox.Items.AddRange(new object[] {
             "OT_ITEM",
@@ -314,6 +317,7 @@
             this.rewardAmountTextbox.Size = new System.Drawing.Size(121, 20);
             this.rewardAmountTextbox.TabIndex = 4;
             this.rewardAmountTextbox.TextChanged += new System.EventHandler(this.rewardAmountTextbox_TextChanged);
+            this.rewardAmountTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rewardAmountTextbox_KeyPress);
             // 
             // rewardSpecTextbox
             // 
@@ -322,6 +326,7 @@
             this.rewardSpecTextbox.Size = new System.Drawing.Size(121, 20);
             this.rewardSpecTextbox.TabIndex = 3;
             this.rewardSpecTextbox.TextChanged += new System.EventHandler(this.rewardSpecTextbox_TextChanged);
+            this.rewardSpecTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rewardSpecTextbox_KeyPress);
             // 
             // label10
             // 
@@ -412,6 +417,15 @@
             this.groupbox2.TabStop = false;
             this.groupbox2.Text = "Objective";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Location = new System.Drawing.Point(6, 131);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(432, 125);
+            this.groupBox4.TabIndex = 26;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "attributes";
+            // 
             // deleteObjectiveButton
             // 
             this.deleteObjectiveButton.Location = new System.Drawing.Point(363, 98);
@@ -441,6 +455,7 @@
             // 
             // lockTypeCombobox
             // 
+            this.lockTypeCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.lockTypeCombobox.FormattingEnabled = true;
             this.lockTypeCombobox.Items.AddRange(new object[] {
             "QUESTLOCK_HARD",
@@ -480,6 +495,7 @@
             this.objectiveIdTextbox.Size = new System.Drawing.Size(100, 20);
             this.objectiveIdTextbox.TabIndex = 3;
             this.objectiveIdTextbox.TextChanged += new System.EventHandler(this.objectiveIdTextbox_TextChanged);
+            this.objectiveIdTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.objectiveIdTextbox_KeyPress);
             // 
             // label14
             // 
@@ -497,6 +513,7 @@
             this.descriptionIdTextbox.Size = new System.Drawing.Size(100, 20);
             this.descriptionIdTextbox.TabIndex = 9;
             this.descriptionIdTextbox.TextChanged += new System.EventHandler(this.descriptionIdTextbox_TextChanged);
+            this.descriptionIdTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descriptionIdTextbox_KeyPress);
             // 
             // titleIdTextbox
             // 
@@ -505,6 +522,7 @@
             this.titleIdTextbox.Size = new System.Drawing.Size(100, 20);
             this.titleIdTextbox.TabIndex = 8;
             this.titleIdTextbox.TextChanged += new System.EventHandler(this.titleIdTextbox_TextChanged);
+            this.titleIdTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.titleIdTextbox_KeyPress);
             // 
             // label17
             // 
@@ -526,6 +544,7 @@
             // 
             // objectiveTypeCombobox
             // 
+            this.objectiveTypeCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.objectiveTypeCombobox.FormattingEnabled = true;
             this.objectiveTypeCombobox.Items.AddRange(new object[] {
             "OBJECTIVE_TASK_BUILD",
@@ -542,7 +561,7 @@
             this.objectiveTypeCombobox.Name = "objectiveTypeCombobox";
             this.objectiveTypeCombobox.Size = new System.Drawing.Size(268, 21);
             this.objectiveTypeCombobox.TabIndex = 5;
-            this.objectiveTypeCombobox.TextChanged += new System.EventHandler(this.objectiveTypeCombobox_TextChanged_1);
+            this.objectiveTypeCombobox.TextChanged += new System.EventHandler(this.objectiveTypeCombobox_TextChanged);
             // 
             // label15
             // 
@@ -560,6 +579,7 @@
             this.orderTextbox.Size = new System.Drawing.Size(100, 20);
             this.orderTextbox.TabIndex = 1;
             this.orderTextbox.TextChanged += new System.EventHandler(this.orderTextbox_TextChanged);
+            this.orderTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderTextbox_KeyPress);
             // 
             // label13
             // 
@@ -606,6 +626,7 @@
             // 
             // questTypeCombobox
             // 
+            this.questTypeCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.questTypeCombobox.FormattingEnabled = true;
             this.questTypeCombobox.Items.AddRange(new object[] {
             "QUEST_STORY_LINE",
@@ -646,6 +667,7 @@
             this.questOrderTextbox.Size = new System.Drawing.Size(158, 20);
             this.questOrderTextbox.TabIndex = 5;
             this.questOrderTextbox.TextChanged += new System.EventHandler(this.questOrderTextbox_TextChanged);
+            this.questOrderTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.questOrderTextbox_KeyPress);
             // 
             // label3
             // 
@@ -672,6 +694,7 @@
             this.questIdTextbox.Size = new System.Drawing.Size(158, 20);
             this.questIdTextbox.TabIndex = 1;
             this.questIdTextbox.TextChanged += new System.EventHandler(this.questIdTextbox_TextChanged);
+            this.questIdTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.questIdTextbox_KeyPress);
             // 
             // label1
             // 
@@ -682,75 +705,57 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "QuestId";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Location = new System.Drawing.Point(6, 131);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(432, 125);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "attributes";
-            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.linksToListBox);
-            this.groupBox5.Controls.Add(this.linksFromListBox);
-            this.groupBox5.Controls.Add(this.label22);
-            this.groupBox5.Controls.Add(this.label21);
-            this.groupBox5.Location = new System.Drawing.Point(12, 432);
+            this.groupBox5.Controls.Add(this.saveLinksButton);
+            this.groupBox5.Controls.Add(this.linksDataGridView);
+            this.groupBox5.Location = new System.Drawing.Point(106, 432);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(926, 121);
+            this.groupBox5.Size = new System.Drawing.Size(926, 187);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "attributes";
+            this.groupBox5.Text = "Quest links";
             // 
-            // label21
+            // saveLinksButton
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(68, 16);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(55, 13);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Links from";
+            this.saveLinksButton.Location = new System.Drawing.Point(640, 20);
+            this.saveLinksButton.Name = "saveLinksButton";
+            this.saveLinksButton.Size = new System.Drawing.Size(75, 47);
+            this.saveLinksButton.TabIndex = 1;
+            this.saveLinksButton.Text = "SAVE LINK CHANGES";
+            this.saveLinksButton.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // linksDataGridView
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(760, 16);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(44, 13);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "Links to";
+            this.linksDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.linksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.linksDataGridView.Location = new System.Drawing.Point(6, 20);
+            this.linksDataGridView.Name = "linksDataGridView";
+            this.linksDataGridView.Size = new System.Drawing.Size(625, 161);
+            this.linksDataGridView.TabIndex = 0;
             // 
-            // linksFromListBox
+            // questListBox
             // 
-            this.linksFromListBox.FormattingEnabled = true;
-            this.linksFromListBox.Location = new System.Drawing.Point(9, 34);
-            this.linksFromListBox.Name = "linksFromListBox";
-            this.linksFromListBox.Size = new System.Drawing.Size(186, 82);
-            this.linksFromListBox.TabIndex = 2;
-            // 
-            // linksToListBox
-            // 
-            this.linksToListBox.FormattingEnabled = true;
-            this.linksToListBox.Location = new System.Drawing.Point(734, 32);
-            this.linksToListBox.Name = "linksToListBox";
-            this.linksToListBox.Size = new System.Drawing.Size(186, 82);
-            this.linksToListBox.TabIndex = 3;
+            this.questListBox.FormattingEnabled = true;
+            this.questListBox.Location = new System.Drawing.Point(4, 13);
+            this.questListBox.Name = "questListBox";
+            this.questListBox.Size = new System.Drawing.Size(97, 602);
+            this.questListBox.TabIndex = 25;
+            this.questListBox.SelectedIndexChanged += new System.EventHandler(this.questListBox_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 560);
+            this.ClientSize = new System.Drawing.Size(1126, 631);
+            this.Controls.Add(this.questListBox);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CurrentLinksFilepath);
             this.Controls.Add(this.CurrentQuestFilepath);
             this.Controls.Add(this.QuestLinksPickerButton);
             this.Controls.Add(this.QuestXmlPickerButton);
-            this.MaximumSize = new System.Drawing.Size(964, 599);
-            this.MinimumSize = new System.Drawing.Size(964, 599);
+            this.MinimumSize = new System.Drawing.Size(964, 670);
             this.Name = "Form1";
             this.Text = "Citadels Quest Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -761,7 +766,7 @@
             this.groupbox2.ResumeLayout(false);
             this.groupbox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.linksDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -829,10 +834,9 @@
         private System.Windows.Forms.Button deleteRewardButton;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListBox linksToListBox;
-        private System.Windows.Forms.ListBox linksFromListBox;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DataGridView linksDataGridView;
+        private System.Windows.Forms.Button saveLinksButton;
+        private System.Windows.Forms.ListBox questListBox;
     }
 }
 

@@ -1,5 +1,4 @@
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\bin\Debug\TehQuestsGenerator.exe.config
-D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.csprojResolveAssemblyReference.cache
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.Form1.resources
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.Properties.Resources.resources
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.csproj.GenerateResource.Cache
@@ -13,7 +12,8 @@ D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\De
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.CraftCampControl.resources
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.CraftCityControl.resources
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.HireControl.resources
-D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.KillPveController.resources
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.LearnControl.resources
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.UseItemController.resources
 D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.WinPveControl.resources
+D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.csprojResolveAssemblyReference.cache
+D:\Users\Iswitcher\Documents\GitHub\TehQuestsGenerator\TehQuestsGenerator\obj\Debug\TehQuestsGenerator.KillController.resources

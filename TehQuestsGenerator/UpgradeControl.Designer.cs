@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buildingTypeIdTextBox = new System.Windows.Forms.TextBox();
+            this.upgradeLevelTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -52,26 +52,28 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "level";
             // 
-            // textBox1
+            // buildingTypeIdTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.buildingTypeIdTextBox.Location = new System.Drawing.Point(99, 10);
+            this.buildingTypeIdTextBox.Name = "buildingTypeIdTextBox";
+            this.buildingTypeIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.buildingTypeIdTextBox.TabIndex = 2;
+            this.buildingTypeIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buildingTypeIdTextBox_KeyPress);
             // 
-            // textBox2
+            // upgradeLevelTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.upgradeLevelTextBox.Location = new System.Drawing.Point(99, 36);
+            this.upgradeLevelTextBox.Name = "upgradeLevelTextBox";
+            this.upgradeLevelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.upgradeLevelTextBox.TabIndex = 3;
+            this.upgradeLevelTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.upgradeLevelTextBox_KeyPress);
             // 
             // UpgradeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.upgradeLevelTextBox);
+            this.Controls.Add(this.buildingTypeIdTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UpgradeControl";
@@ -85,7 +87,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox buildingTypeIdTextBox;
+        public System.Windows.Forms.TextBox upgradeLevelTextBox;
     }
 }

@@ -10,20 +10,16 @@ namespace TehQuestsGenerator
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void buildingTypeIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Form1 f1 = Application.OpenForms["Form1"] as Form1;
-            f1.updateBuildingTypeId(int.Parse(textBox1.Text));
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), "\\d+"))
+                e.Handled = true;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void countTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-            
+            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), "\\d+"))
+                e.Handled = true;
         }
     }
 }

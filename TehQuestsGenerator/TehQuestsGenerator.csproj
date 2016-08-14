@@ -76,11 +76,11 @@
     <Compile Include="HireControl.Designer.cs">
       <DependentUpon>HireControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="KillPveController.cs">
+    <Compile Include="KillController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KillPveController.Designer.cs">
-      <DependentUpon>KillPveController.cs</DependentUpon>
+    <Compile Include="KillController.Designer.cs">
+      <DependentUpon>KillController.cs</DependentUpon>
     </Compile>
     <Compile Include="LearnControl.cs">
       <SubType>UserControl</SubType>
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="HireControl.resx">
       <DependentUpon>HireControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KillPveController.resx">
-      <DependentUpon>KillPveController.cs</DependentUpon>
+    <EmbeddedResource Include="KillController.resx">
+      <DependentUpon>KillController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LearnControl.resx">
       <DependentUpon>LearnControl.cs</DependentUpon>
@@ -158,6 +158,9 @@
     <EmbeddedResource Include="WinPveControl.resx">
       <DependentUpon>WinPveControl.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Form1.UpdateObjectivesEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

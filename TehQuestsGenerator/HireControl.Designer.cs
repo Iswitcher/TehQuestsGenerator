@@ -28,38 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.counterTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.countTextBox = new System.Windows.Forms.TextBox();
+            this.unitTypeIdTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // counterTypeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.counterTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.counterTypeComboBox.FormattingEnabled = true;
+            this.counterTypeComboBox.Items.AddRange(new object[] {
             "COUNTER_ABSOLUTE",
             "COUNTER_RELATIVE"});
-            this.comboBox1.Location = new System.Drawing.Point(94, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
+            this.counterTypeComboBox.Location = new System.Drawing.Point(94, 53);
+            this.counterTypeComboBox.Name = "counterTypeComboBox";
+            this.counterTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.counterTypeComboBox.TabIndex = 11;
             // 
-            // textBox2
+            // countTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 10;
+            this.countTextBox.Location = new System.Drawing.Point(94, 31);
+            this.countTextBox.Name = "countTextBox";
+            this.countTextBox.Size = new System.Drawing.Size(121, 20);
+            this.countTextBox.TabIndex = 10;
+            this.countTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countTextBox_KeyPress);
             // 
-            // textBox1
+            // unitTypeIdTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 9;
+            this.unitTypeIdTextBox.Location = new System.Drawing.Point(94, 9);
+            this.unitTypeIdTextBox.Name = "unitTypeIdTextBox";
+            this.unitTypeIdTextBox.Size = new System.Drawing.Size(121, 20);
+            this.unitTypeIdTextBox.TabIndex = 9;
+            this.unitTypeIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unitTypeIdTextBox_KeyPress);
             // 
             // label3
             // 
@@ -92,9 +95,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.counterTypeComboBox);
+            this.Controls.Add(this.countTextBox);
+            this.Controls.Add(this.unitTypeIdTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -106,12 +109,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox countTextBox;
+        public System.Windows.Forms.TextBox unitTypeIdTextBox;
+        public System.Windows.Forms.ComboBox counterTypeComboBox;
     }
 }

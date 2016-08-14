@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.levelTextBox = new System.Windows.Forms.TextBox();
+            this.knowledgeTypeIdTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox2
+            // levelTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(102, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 14;
+            this.levelTextBox.Location = new System.Drawing.Point(102, 34);
+            this.levelTextBox.Name = "levelTextBox";
+            this.levelTextBox.Size = new System.Drawing.Size(121, 20);
+            this.levelTextBox.TabIndex = 14;
+            this.levelTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.levelTextBox_KeyPress);
             // 
-            // textBox1
+            // knowledgeTypeIdTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 13;
+            this.knowledgeTypeIdTextBox.Location = new System.Drawing.Point(102, 12);
+            this.knowledgeTypeIdTextBox.Name = "knowledgeTypeIdTextBox";
+            this.knowledgeTypeIdTextBox.Size = new System.Drawing.Size(121, 20);
+            this.knowledgeTypeIdTextBox.TabIndex = 13;
+            this.knowledgeTypeIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.knowledgeTypeIdTextBox_KeyPress);
             // 
             // label2
             // 
@@ -70,8 +72,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.levelTextBox);
+            this.Controls.Add(this.knowledgeTypeIdTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LearnControl";
@@ -82,10 +84,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox levelTextBox;
+        public System.Windows.Forms.TextBox knowledgeTypeIdTextBox;
     }
 }

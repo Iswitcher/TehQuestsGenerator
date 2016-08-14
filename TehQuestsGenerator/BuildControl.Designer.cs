@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.buildingTypeIdTextBox = new System.Windows.Forms.TextBox();
+            this.countTextBox = new System.Windows.Forms.TextBox();
+            this.counterTypeComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -63,46 +63,46 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "counterType";
             // 
-            // textBox1
+            // buildingTypeIdTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.buildingTypeIdTextBox.Location = new System.Drawing.Point(94, 8);
+            this.buildingTypeIdTextBox.Name = "buildingTypeIdTextBox";
+            this.buildingTypeIdTextBox.Size = new System.Drawing.Size(146, 20);
+            this.buildingTypeIdTextBox.TabIndex = 3;
+            this.buildingTypeIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buildingTypeIdTextBox_KeyPress);
             // 
-            // textBox2
+            // countTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.countTextBox.Location = new System.Drawing.Point(94, 30);
+            this.countTextBox.Name = "countTextBox";
+            this.countTextBox.Size = new System.Drawing.Size(146, 20);
+            this.countTextBox.TabIndex = 4;
+            this.countTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countTextBox_KeyPress);
             // 
-            // comboBox1
+            // counterTypeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.counterTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.counterTypeComboBox.FormattingEnabled = true;
+            this.counterTypeComboBox.Items.AddRange(new object[] {
             "COUNTER_ABSOLUTE",
             "COUNTER_RELATIVE"});
-            this.comboBox1.Location = new System.Drawing.Point(94, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            this.counterTypeComboBox.Location = new System.Drawing.Point(94, 52);
+            this.counterTypeComboBox.Name = "counterTypeComboBox";
+            this.counterTypeComboBox.Size = new System.Drawing.Size(146, 21);
+            this.counterTypeComboBox.TabIndex = 5;
             // 
             // BuildControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.counterTypeComboBox);
+            this.Controls.Add(this.countTextBox);
+            this.Controls.Add(this.buildingTypeIdTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BuildControl";
-            this.Size = new System.Drawing.Size(232, 80);
+            this.Size = new System.Drawing.Size(273, 80);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,8 +113,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox buildingTypeIdTextBox;
+        public System.Windows.Forms.TextBox countTextBox;
+        public System.Windows.Forms.ComboBox counterTypeComboBox;
     }
 }
